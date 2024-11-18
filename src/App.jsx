@@ -6,13 +6,17 @@ import "./App.css";
 function App() {
   let [counter, setCounter] = useState(0);
   const addValue = () => {
-    console.log("clicked", counter);
-    setCounter(counter + 1);
+    if (counter < 10) {
+      setCounter(counter + 1);
+    } else {
+      console.log("counter can't go above 10");
+    }
   };
 
   const removeValue = () => {
-    console.log("clicked", counter);
-    setCounter(counter - 1);
+    if (counter > 0) {
+      setCounter(counter - 1);
+    }
   };
 
   return (
